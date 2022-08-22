@@ -24,29 +24,30 @@ body {
 }
 html, body, pre, code, kbd, samp {
 font-family: Press Start 2P, cursive;
-font-size:13px;
+font-size:12px;
 }
 .form {margin:5%;}
 #result {margin:10%;}
 label {font-size:12px;}
+
 </style>
+
+
  </head>
  <body>
     <div class="form">
-    <h1 style="margin-bottom:18px;" class="nes-text is-primary" > 122Super ROAS Calculator</h1>
- <div class="nes-container with-title">
- <p style="background-color:#f4f4f4;" class="title">Introduce your data:</p>
+    <h1 style="margin-bottom:18px;text-align:center;" class="nes-text" >ROAS Calc.</h1>
+ <div class="nes-container is-rounded">
     <form id="formroas">  
      <fieldset>
         <label>Profit margin (%):</label><br>  
-        <input type="number" name="margin" id="margin" step="any" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 41.50" required><br><br>
+        <input type="number" name="margin" id="margin" step="any" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 41.50" required><br>
         <label>Conversion rate (%):</label><br>
-        <input type="number" name="rate" step="any" id="rate" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 1.57" required><br>  <br>
+        <input type="number" name="rate" step="any" id="rate" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 1.57" required><br>
         <label>Avg. order value:</label><br>  
-        <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br><br>
+        <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br>
         <label>Avg. orders per day:</label><br> 
-        <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br>  
-        <br>
+        <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br><br>
        <label> How is your goal?</label><br>
        <input type="radio" id="goal" name="goal" value="Realistic" required/> Realistic
         <br>  
@@ -54,7 +55,7 @@ label {font-size:12px;}
         <br>
         <input type="radio" id="goal" name="goal" value="Ambitious" required/> Ambitious
         <br>
-        <br><button type="submit" class="nes-btn is-primary" style="width:100%;">  Calculate</button>
+        <br><button type="submit" class="nes-btn" style="width:100%;">  Calculate</button>
         <br>
      </fieldset>
   </form>
@@ -96,17 +97,17 @@ label {font-size:12px;}
     <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
 
     <hr style="border-top: 3px solid black;"><br>
-    <p>Be aware you need a ROAS greater than ${roas.toFixed(2)}.</p>
-    <p>Keep in mind your CPA cannot exceed ${cpamax.toFixed(2)}€.</p>
-    <p>And try to keep your average CPC under ${cpcmax.toFixed(2)}€.</p>
+    <p>Be aware you need a ROAS greater than <span class="nes-text is-success">${roas.toFixed(2)}</span>.</p>
+    <p>Keep in mind your CPA cannot exceed <span class="nes-text is-error">${cpamax.toFixed(2)}€</span>.</p>
+    <p>And try to keep your average CPC under <span class="nes-text is-warning">${cpcmax.toFixed(2)}€<span>.</p>
     <br><br>
      <h2 class="nes-balloon from-right nes-pointer">Based on your goal...</h2>
     <div style="text-align:right;"><i class="nes-octocat animate from-right"></i><i class="nes-icon trophy is-medium"></i>
 </div>
     <hr style="border-top: 3px solid black;"><br>
-    <p>You want to achieve a ${goal} goal.</p> 
-    <p>So you are looking for a ROAS greater than  <strong>${newroas.toFixed(2)}</strong>.</p>  
-    <p>Start by reducing your CPA to ${newcpa.toFixed (2)}€.</p>
+    <p>You want to achieve a <strong>${goal}</strong> goal.</p> 
+    <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-success">${newroas.toFixed(2)}</span></strong>.</p>  
+    <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
     <br>
     `
     } 
