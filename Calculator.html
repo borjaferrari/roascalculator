@@ -78,7 +78,7 @@ label {font-size:12px;}
 
   </div>
     <div class="progress-bar-wrapper">
-        <div class="progress-bar"><span style="color:#f4f4f4; text-align:center; display:block; ">YOUR RESULT</span></div>
+        <div class="progress-bar"><span style="color:#f4f4f4; text-align:center; display:block; ">YOUR RESULTS</span></div>
     </div>
    
   <div id="result">
@@ -97,7 +97,6 @@ label {font-size:12px;}
     form.addEventListener("submit", validateform)
     function validateform(e) {
     e.preventDefault();
-    
 //We take all values from the form
     var margin = document.getElementById("margin").value
     var rate = document.getElementById("rate").value
@@ -122,7 +121,6 @@ label {font-size:12px;}
     result.innerHTML =`
     <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
     <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
-
     <hr style="border-top: 3px solid black;"><br>
     <p>Be aware you need a ROAS greater than <span class="nes-text is-success">${roas.toFixed(2)}</span>.</p>
     <p>Keep in mind your CPA cannot exceed <span class="nes-text is-error">${cpamax.toFixed(2)}€</span>.</p>
