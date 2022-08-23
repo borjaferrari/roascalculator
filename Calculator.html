@@ -82,17 +82,13 @@ label {font-size:12px;}
     </div>
    
   <div id="result">
- 
     <script type="text/javascript"> 
-    
 //We get onclick event and load progress bar    
     function load_something(seconds) {
         const progress_bar = document.querySelector('.progress-bar')
         progress_bar.style.transition = `${seconds}s linear width`
         progress_bar.style.width = '100%'
-        
     }
-    
 //We capture form & event, and prevent reload
     var form = document.getElementById("formroas")
     form.addEventListener("submit", validateform)
@@ -118,6 +114,11 @@ label {font-size:12px;}
     var newcpa = ticket / newroas
 //We create a new variable to get a div
     var result = document.getElementById("result");
+    
+    
+
+    
+    
 // We show results in the new variable (div)
     result.innerHTML =`
     <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
