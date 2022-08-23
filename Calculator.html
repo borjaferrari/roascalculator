@@ -30,6 +30,18 @@ font-size:12px;
 #result {margin:10%;}
 label {font-size:12px;}
         
+      .progress-bar-wrapper {
+            width: 100%;
+            height: 50px;
+            background-color: #f4f4f4;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #06A77D;
+        }  
+        
 </style>
 
 
@@ -55,27 +67,38 @@ label {font-size:12px;}
         <br>
         <input type="radio" id="goal" name="goal" value="Greedy" required/> Greedy
         <br>
-        <br><button type="submit" class="nes-btn" style="width:100%;">  Calculate</button>
+        <br><button type="submit" class="nes-btn" style="width:100%;" onclick="load_something(1)">  Calculate</button>
         <br>
      </fieldset>
   </form>
    
   </div>
-  
+  <div class="progress-bar-wrapper">
+        <div class="progress-bar"></div>
+    </div>
   </div>
     
   <br>
   <div id="result">
-    
-    
-   
-    
+
     <script type="text/javascript"> 
+    
+    
+    function load_something(seconds) {
+        const progress_bar = document.querySelector('.progress-bar')
+        progress_bar.style.transition = `${seconds}s linear width`
+        progress_bar.style.width = '100%'
+    }
+    
 //We capture form & event, and prevent reload
     var form = document.getElementById("formroas")
     form.addEventListener("submit", validateform)
     function validateform(e) {
     e.preventDefault();
+    
+    
+    
+    
 //We take all values from the form
     var margin = document.getElementById("margin").value
     var rate = document.getElementById("rate").value
