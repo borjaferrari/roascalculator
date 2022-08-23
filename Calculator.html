@@ -53,7 +53,7 @@ label {font-size:12px;}
         <br>  
         <input type="radio" id="goal" name="goal" value="Positive" required/> Positive
         <br>
-        <input type="radio" id="goal" name="goal" value="Ambitious" required/> Greedy
+        <input type="radio" id="goal" name="goal" value="Greedy" required/> Greedy
         <br>
         <br><button type="submit" class="nes-btn" style="width:100%;">  Calculate</button>
         <br>
@@ -86,7 +86,7 @@ label {font-size:12px;}
     var uproas;//We declare the variable and then we assign values based on input
     if(goal == "Realistic") {uproas = 1.75;}
     if(goal == "Positive") {uproas = 2.5;}
-    if(goal == "Ambitious") {uproas = 4.0;}
+    if(goal == "Greedy") {uproas = 4.0;}
     var newroas = uproas * roas
     var newcpa = ticket / newroas
 //We create a new variable to get a div
@@ -105,8 +105,8 @@ label {font-size:12px;}
     <div style="text-align:right;"><i class="nes-octocat animate from-right"></i><i class="nes-icon trophy is-medium"></i>
 </div>
     <hr style="border-top: 3px solid black;"><br>
-    <p>You want to achieve a <strong>${goal}</strong> goal.</p> 
-    <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-success">${newroas.toFixed(2)}</span></strong>.</p>  
+    <p>You want to achieve a <strong><span class="nes-text is-success">${goal}</span></strong> goal.</p> 
+    <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-error">${newroas.toFixed(2)}</span></strong>.</p>  
     <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
     <br>
     `
