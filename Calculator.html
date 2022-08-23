@@ -34,12 +34,12 @@ label {font-size:12px;}
             width: 100%;
             height: 50px;
             background-color: #f4f4f4;
-            margin: 20px 0;
+            margin: 50px 0px 20px 0px;
         }
         .progress-bar {
             height: 100%;
             width: 0%;
-            background-color: #06A77D;
+            background-color: #000000;
         }  
         
 </style>
@@ -73,17 +73,17 @@ label {font-size:12px;}
   </form>
    
   </div>
-  <div class="progress-bar-wrapper">
-        <div class="progress-bar"></div>
-    </div>
-  </div>
-    
-  <br>
-  <div id="result">
 
+  </div>
+    <div class="progress-bar-wrapper">
+        <div class="progress-bar"><span style="color:#f4f4f4; text-align:center;">hola</span></div>
+    </div>
+   
+  <div id="result">
+ 
     <script type="text/javascript"> 
     
-    
+//We get onclick event and load progress bar    
     function load_something(seconds) {
         const progress_bar = document.querySelector('.progress-bar')
         progress_bar.style.transition = `${seconds}s linear width`
@@ -95,9 +95,6 @@ label {font-size:12px;}
     form.addEventListener("submit", validateform)
     function validateform(e) {
     e.preventDefault();
-    
-    
-    
     
 //We take all values from the form
     var margin = document.getElementById("margin").value
