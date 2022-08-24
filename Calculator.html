@@ -1,26 +1,24 @@
 <!DOCTYPE html>  
- <html>  
- <head>  
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>ROAS CALCULATOR</title> 
+<html>  
+<head>  
+<!-- HTML Meta Data--> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROAS CALCULATOR</title> 
 <!-- CSS Framework Links-->
 <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-
+<!-- Javasceript Framework Link-->
 <script>
-// script.js
 import "nes.css/css/nes.min.css";
 </script>
-
-<!-- CSS Styles -->
+<!-- Global CSS Styles -->
 <style>
 body {
-  background-color: #f4f4f4;
-}
+background-color: #f4f4f4;
 }
 html, body, pre, code, kbd, samp {
 font-family: Press Start 2P, cursive;
@@ -29,16 +27,15 @@ font-size:12px;
 .form {margin:5%;}
 #result {margin:10%;}
 label {font-size:12px;}
-        
 </style>
+</head>
+<body>
 
- </head>
- <body>
     <div class="form">
-    <h1 style="margin-top:30px; margin-bottom:18px; text-align:center;" class="nes-text" >ROAS Calc.</h1>
- <div class="nes-container is-rounded">
-    <form id="formroas">  
-     <fieldset>
+        <h1 style="margin-top:30px; margin-bottom:18px; text-align:center;" class="nes-text" >ROAS Calc.</h1>
+        <div class="nes-container is-rounded">
+        <form id="formroas">  
+        <fieldset>
         <label>Profit margin (%):</label><br>  
         <input type="number" name="margin" id="margin" step="any" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 41.50" required><br>
         <label>Conversion rate (%):</label><br>
@@ -47,8 +44,8 @@ label {font-size:12px;}
         <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br>
         <label>Avg. orders per day:</label><br> 
         <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br><br>
-       <label> How is your goal?</label><br>
-       <input type="radio" id="goal" name="goal" value="Realistic" required/> Realistic
+        <label> How is your goal?</label><br>
+        <input type="radio" id="goal" name="goal" value="Realistic" required/> Realistic
         <br>  
         <input type="radio" id="goal" name="goal" value="Positive" required/> Positive
         <br>
@@ -58,21 +55,22 @@ label {font-size:12px;}
         <br>
         <input type="reset" value="Clean" onClick="Clean()"/>
         <br>
-     </fieldset>
-  </form>
-  </div>
-  </div>
+        </fieldset>
+        </form>
+        </div>
+    </div>
 
-  <div id="result">
-  <script type="text/javascript"> 
-    function Clean(){
-  document.getElementById('result').innerHTML='';
-    }
+    <div id="result">
+    <script type="text/javascript"> 
+//We set the reset form button
+        function Clean(){
+        document.getElementById('result').innerHTML='';
+        }
 //We capture form & event, and prevent reload
     var form = document.getElementById("formroas")
-    form.addEventListener("submit", validateform)
-    function validateform(e) {
-    e.preventDefault();
+        form.addEventListener("submit", validateform)
+        function validateform(e) {
+        e.preventDefault();
 //We take all values from the form
     var margin = document.getElementById("margin").value
     var rate = document.getElementById("rate").value
@@ -86,33 +84,34 @@ label {font-size:12px;}
     var roas = ticket / cpamax
 //We set new variables for the future goal
     var uproas;//We declare the variable and then we assign values based on input
-    if(goal == "Realistic") {uproas = 1.75;}
-    if(goal == "Positive") {uproas = 2.5;}
-    if(goal == "Greedy") {uproas = 4.0;}
+        if(goal == "Realistic") {uproas = 1.75;}
+        if(goal == "Positive") {uproas = 2.5;}
+        if(goal == "Greedy") {uproas = 4.0;}
     var newroas = uproas * roas
     var newcpa = ticket / newroas
 //We create a new variable to get a div
     var result = document.getElementById("result");
 // We show results in the new variable (div)
-    result.innerHTML =`
-    <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
-    <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
-    <hr style="border-top: 3px solid black;"><br>
-    <p>Be aware you need a ROAS greater than <span class="nes-text is-success">${roas.toFixed(2)}</span>.</p>
-    <p>Keep in mind your CPA cannot exceed <span class="nes-text is-error">${cpamax.toFixed(2)}€</span>.</p>
-    <p>And try to keep your average CPC under <span class="nes-text is-warning">${cpcmax.toFixed(2)}€<span>.</p>
-    <br><br>
-     <h2 class="nes-balloon from-right nes-pointer">Based on your goal...</h2>
-    <div style="text-align:right;"><i class="nes-octocat animate from-right"></i><i class="nes-icon trophy is-medium"></i>
-</div>
-    <hr style="border-top: 3px solid black;"><br>
-    <p>You want to achieve a <strong><span class="nes-text is-success">${goal}</span></strong> goal.</p> 
-    <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-error">${newroas.toFixed(2)}</span></strong>.</p>  
-    <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
-    <br>
-    `
+        result.innerHTML =`
+        <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
+        <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
+        <hr style="border-top: 3px solid black;"><br>
+        <p>Be aware you need a ROAS greater than <span class="nes-text is-success">${roas.toFixed(2)}</span>.</p>
+        <p>Keep in mind your CPA cannot exceed <span class="nes-text is-error">${cpamax.toFixed(2)}€</span>.</p>
+        <p>And try to keep your average CPC under <span class="nes-text is-warning">${cpcmax.toFixed(2)}€<span>.</p>
+        <br><br>
+        <h2 class="nes-balloon from-right nes-pointer">Based on your goal...</h2>
+        <div style="text-align:right;"><i class="nes-octocat animate from-right"></i><i class="nes-icon trophy is-medium"></i>
+        </div>
+        <hr style="border-top: 3px solid black;"><br>
+        <p>You want to achieve a <strong><span class="nes-text is-success">${goal}</span></strong> goal.</p> 
+        <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-error">${newroas.toFixed(2)}</span></strong>.</p>  
+        <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
+        <br>
+        `
     } 
     </script>
-  </div>
- </body>
- </html>
+    </div>
+ 
+</body>
+</html>
