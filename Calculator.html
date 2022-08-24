@@ -71,18 +71,25 @@ label {font-size:12px;}
         <br>
         <br><button type="submit" class="nes-btn" style="width:100%;" onclick="load_something(1)">  Calculate</button>
         <br>
+        <input type="reset" value="Clean" onClick="Clean()"/>
+        <br>
      </fieldset>
   </form>
    
   </div>
 
   </div>
-    <div class="progress-bar-wrapper">
-        <div class="progress-bar"><span style="color:#f4f4f4; text-align:center; display:block; ">YOUR RESULTS</span></div>
-    </div>
+    
    
   <div id="result">
+    
+    
+    
     <script type="text/javascript"> 
+    function Clean(){
+  document.getElementById('result').innerHTML='';
+  document.getElementById('pbar').innerHTML='';
+}
 //We get onclick event and load progress bar    
     function load_something(seconds) {
         const progress_bar = document.querySelector('.progress-bar')
@@ -121,6 +128,9 @@ label {font-size:12px;}
     
 // We show results in the new variable (div)
     result.innerHTML =`
+    <div id="pbar" class="progress-bar-wrapper">
+        <div class="progress-bar"><span style="color:#f4f4f4; text-align:center; display:block; ">YOUR RESULTS</span></div>
+    </div>
     <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
     <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
     <hr style="border-top: 3px solid black;"><br>
