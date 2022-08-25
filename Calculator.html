@@ -24,6 +24,9 @@ html, body, pre, code, kbd, samp {
 font-family: Press Start 2P, cursive;
 font-size:12px;
 }
+h1 {font-size: 30px;
+  
+}
 .form {margin:5%;}
 #result {margin:10%;}
 label {font-size:12px;}
@@ -37,11 +40,11 @@ label {font-size:12px;}
         <form id="formroas">  
         <fieldset>
         <label>Profit margin (%):</label><br>  
-        <input type="number" name="margin" id="margin" step="any" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 41.50" required><br>
+        <input type="number" name="margin" id="margin" step="any" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 41.50" required><br><br>
         <label>Conversion rate (%):</label><br>
-        <input type="number" name="rate" step="any" id="rate" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 1.57" required><br>
+        <input type="number" name="rate" step="any" id="rate" min="0,01" max="100" class="nes-input is-primary" placeholder="Example: 1.57" required><br><br>
         <label>Avg. order value:</label><br>  
-        <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br>
+        <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br><br>
         <label>Avg. orders per day:</label><br> 
         <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br><br>
         <label> How is your goal?</label><br>
@@ -49,11 +52,11 @@ label {font-size:12px;}
         <br>  
         <input type="radio" id="goal" name="goal" value="Positive" required/> Positive
         <br>
-        <input type="radio" id="goal" name="goal" value="Greedy" required/> Greedy
+        <input type="radio" id="goal" name="goal" value="Fantastic" required/> Fantastic
         <br>
         <br><button type="submit" class="nes-btn" style="width:100%;">  Calculate</button>
-        <br>
-        <input type="reset" value="Clean" onClick="Clean()"/>
+        <br><br>
+        <input style="align-content:right;" type="reset" value="Clean" onClick="Clean()"/>
         <br>
         </fieldset>
         </form>
@@ -86,7 +89,7 @@ label {font-size:12px;}
     var uproas;//We declare the variable and then we assign values based on input
         if(goal == "Realistic") {uproas = 1.75;}
         if(goal == "Positive") {uproas = 2.5;}
-        if(goal == "Greedy") {uproas = 4.0;}
+        if(goal == "Fantastic") {uproas = 4.0;}
     var newroas = uproas * roas
     var newcpa = ticket / newroas
 //We create a new variable to get a div
