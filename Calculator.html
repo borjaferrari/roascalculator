@@ -44,12 +44,36 @@ label {font-size:12px;}
         <label>Avg. orders per day:</label><br> 
         <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br><br>
         <label> How is your goal?</label><br>
+        
+  <label>
+  <input type="radio" id="goal" class="nes-radio" name="answer" checked value="Realistic" required />
+  <span>Realistic</span>
+  </label>
+  
+<br>
+
+  <label>
+  <input type="radio" id="goal" class="nes-radio" name="answer" value="Positive" required />
+  <span>Positive</span>
+  </label>
+
+<br>
+
+  <label>
+  <input type="radio" id="goal" class="nes-radio" name="answer" value="Fantastic" required />
+  <span>Fantastic</span>
+  </label>
+
+<br>
+     <br>   
+     <br> 
+     <!--
         <input type="radio" id="goal" name="goal" value="Realistic" required/> Realistic
         <br>  
         <input type="radio" id="goal" name="goal" value="Positive" required/> Positive
         <br>
         <input type="radio" id="goal" name="goal" value="Fantastic" required/> Fantastic
-        <br>
+        <br> -->
         <br><button type="submit" class="nes-btn" style="width:100%;">  Calculate</button>
         <br><br>
         <input style="align-content:right;" type="reset" value="X Reset" onClick="Clean()"/>
@@ -75,7 +99,7 @@ label {font-size:12px;}
     var rate = document.getElementById("rate").value
     var ticket = document.getElementById("ticket").value
     var orders = document.getElementById("orders").value
-    var goal = document.querySelector('input[name="goal"]:checked').value//We use jquery to get this value because we did not find the way to do it with pure JavaScript code
+    var goal = document.querySelector('input[name="answer"]:checked').value//We use jquery to get this value because we did not find the way to do it with pure JavaScript code
 //We set new variables from actual data
     var clicks = 100 / ((rate / 100) * 100)
     var cpamax = (ticket/100) * margin
