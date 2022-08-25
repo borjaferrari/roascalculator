@@ -26,6 +26,9 @@ h1 {font-size: 30px;
 .form {margin:5%;}
 #result {margin:10%;}
 label {font-size:12px;}
+
+
+.radios {line-height:20px !important;}
 </style>
 </head>
 <body>
@@ -43,14 +46,14 @@ label {font-size:12px;}
         <input type="number" name="ticket" id="ticket" min="0,01" class="nes-input is-primary" step="any" placeholder="Example: 90.85" required><br><br>
         <label>Avg. orders per day:</label><br> 
         <input type="number" name="orders" id="orders" min="1" class="nes-input is-primary" placeholder="Example: 17" required><br><br>
-        <label> How is your goal?</label><br>
+        <label class="radios"> How is your goal?</label><br>
        
-  <label>
+  <label class="radios">
   <input type="radio" id="goal" class="nes-radio" name="answer" checked value="Realistic" required />
   <span>&nbsp;Realistic</span>
   </label>
 <br>
-  <label>
+  <label class="radios">
   <input type="radio" id="goal" class="nes-radio" name="answer" value="Positive" required />
   <span>&nbsp;Positive</span>
   </label>
