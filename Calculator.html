@@ -93,6 +93,7 @@ label {font-size:12px;}
         form.addEventListener("submit", validateform)
         function validateform(e) {
         e.preventDefault();
+        window.scrollTo(0,document.body.scrollHeight);
 //We take all values from the form
     var margin = document.getElementById("margin").value
     var rate = document.getElementById("rate").value
