@@ -19,7 +19,7 @@ font-family: Press Start 2P, cursive;
 font-size:12px;}
 h1 {font-size: 30px;}
 .form {margin:5%;}
-#result {margin:8%;}
+#result {padding:0% 5% 5% 5%;}
 label {font-size:12px;}
 .radios {line-height:20px !important;}
 </style>
@@ -27,10 +27,10 @@ label {font-size:12px;}
 <body>
 
     <div class="form">
-      <div class="nes-container is-rounded is-dark">
+      <div class="nes-container is-rounded">
  <h1 style="margin-top:7px;"  class="nes-text" >ROAS Calc.</h1>
 </div>
-     <br>   
+      
         <div class="nes-container is-rounded">
         <form id="formroas">  
         <fieldset>
@@ -58,7 +58,7 @@ label {font-size:12px;}
   <span>&nbsp;Fantastic</span>
   </label>
      <br>
-        <br><button type="submit" class="nes-btn is-error" style="width:100%;">  Calculate!</button>
+        <br><button type="submit" class="nes-btn " style="width:100%;">  Calculate!</button>
         <br><br>
         <input style="align-content:right;" type="reset" value="X Reset" onClick="Clean()"/>
         <br>
@@ -101,6 +101,9 @@ label {font-size:12px;}
     var result = document.getElementById("result");
 // We show results in the new variable (div)
         result.innerHTML =`
+        <div class="nes-container is-rounded">
+        <p>Output:</p>
+        <br>
         <h2 class="nes-balloon from-left nes-pointer">To avoid losing money...</h2>
         <i class="nes-octocat animate from-left"></i><i class="nes-icon coin is-medium"></i>
         <hr style="border-top: 3px solid black;"><br>
@@ -116,6 +119,7 @@ label {font-size:12px;}
         <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-error">${newroas.toFixed(2)}</span></strong>.</p>  
         <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
         <br>
+        </div>
         `
     } 
     </script>
