@@ -20,6 +20,7 @@ font-size:12px;}
 h1 {font-size: 30px;}
 #titles {margin: 5% 5% 0% 5% !important;}
 .form {margin:5%;}
+.rate-cat {margin:5%;}
 #result {padding:0% 5% 5% 5%;}
 label {font-size:12px;}
 .radios {line-height:20px !important;}
@@ -68,6 +69,10 @@ label {font-size:12px;}
     </div>
 
     <div id="result">
+       <div class="nes-container is-rounded">
+        <a href="#" class="nes-badge">
+  <span class="is-dark">Output...</span>
+</a>
     <script type="text/javascript"> 
 //We set the reset form button
         function Clean(){
@@ -101,10 +106,7 @@ label {font-size:12px;}
     var result = document.getElementById("result");
 // We show results in the new variable (div)
         result.innerHTML =`
-        <div class="nes-container is-rounded">
-        <a href="#" class="nes-badge">
-  <span class="is-dark">Output:</span>
-</a>
+       
 <br><br>
         <h3>To avoid losing money...</h3>
         
@@ -122,13 +124,18 @@ label {font-size:12px;}
         <p>Start reducing your CPA to <span class="nes-text is-warning">${newcpa.toFixed (2)}€</span>.</p>
         <br>
         
-        </div>
+
         <br>
-        <h3 class="nes-balloon from-left nes-pointer">Do you like this app? Please, rate it and make my happy!</h3>
-        <i class="nes-octocat animate from-right"></i>
+
         `
     } 
     </script>
     </div>
+            </div>
+            <div class="rate-cat">
+                      <h3 class="nes-balloon from-left nes-pointer">Do you like this app? Please, rate it and make my happy!</h3>
+        <i class="nes-octocat animate from-right"></i>
+        
+        </div>
 </body>
 </html>
