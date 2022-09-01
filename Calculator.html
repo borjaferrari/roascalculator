@@ -13,22 +13,43 @@
 <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 <!-- Global CSS Styles -->
 <style>
-body {background-color: #f4f4f4;}
+body {background-color: #f4f4f4;
+}
 html, body, pre, code, kbd, samp {
 font-family: Press Start 2P, cursive;
-font-size:12px;}
-h1 {font-size: 30px;}
-#titles {margin: 5% 5% 0% 5% !important;}
-.form {margin:5%;}
-.rate-cat {margin:5%;}
-#result {padding:0% 5% 5% 5%;}
-label {font-size:12px;}
-.radios {line-height:20px !important;}
+font-size:12px;
+}
+h1 {font-size: 30px;
+}
+#titles {margin-top: 5% !important;
+margin-bottom: 35px;
+margin-left:5%;
+margin-right:5%;
+}
+.form {margin-top: 35px !important;
+margin-bottom: 20px;
+margin-left:5%;
+margin-right:5%;
+}
+label {font-size:12px;
+}
+#result {margin-top: 0px !important;
+margin-bottom: 35px;
+margin-left:5%;
+margin-right:5%;
+}
+.rate-cat {margin-top: 35px !important;
+margin-bottom: 35px;
+margin-left:5%;
+margin-right:5%;
+}
+.radios {line-height:20px !important;
+}
 </style>
 </head>
 <body>
-<div id="titles" class="nes-container is-rounded is-dark">
-      <h1 style="margin-top:7px;"  class="nes-text" >ROAS Calc.</h1>
+<div id="titles" class="nes-container is-rounded is-dark" style="text-align:center !important;">
+      <h1 style="margin-top:7px;"  class="nes-text" ><span class="nes-text is-warning">ROAS Cal.</span></h1>
    </div>
     <div class="form">
 
@@ -106,18 +127,18 @@ label {font-size:12px;}
 <div class="nes-container is-dark with-title">
   <p class="title"><span class="nes-text is-warning">Output:</span></p>
 <br>
-        <h4> To avoid losing money...</h4>
+        <h4> <span class="nes-text is-error">To avoid losing money...</span></h4>
         
         <hr style="border-top: 3px solid black;"><br>
-        <p>Be aware you need a ROAS greater than <span class="nes-text is-error">${roas.toFixed(2)}</span>.</p>
-        <p>Keep in mind your CPA cannot exceed <span class="nes-text is-error">${cpamax.toFixed(2)}€</span>.</p>
-        <p>And try to keep your average CPC under <span class="nes-text is-error">${cpcmax.toFixed(2)}€<span>.</p>
+        <p>Be aware you need a ROAS greater than <strong>${roas.toFixed(2)}.</strong></p>
+        <p>Keep in mind your CPA cannot exceed <strong>${cpamax.toFixed(2)}€</strong>.</p>
+        <p>And try to keep your average CPC under <strong>${cpcmax.toFixed(2)}€</strong>.</p>
         <br>
-        <h4>Based on your goal...</h4>
+        <h4><strong><span class="nes-text is-success">Based on your goal...</span></h4>
         <hr style="border-top: 3px solid black;"><br>
-        <p>You want to achieve a <strong><span class="nes-text is-success">${goal}</span></strong> goal.</p> 
-        <p>So you are looking for a ROAS greater than  <strong><span class="nes-text is-success">${newroas.toFixed(2)}</span></strong>.</p>  
-        <p>Start reducing your CPA to <span class="nes-text is-success">${newcpa.toFixed (2)}€</span>.</p>
+        <p>You want to achieve a <strong>${goal}</strong> goal.</p> 
+        <p>So you are looking for a ROAS greater than  <strong>${newroas.toFixed(2)}</strong>.</p>  
+        <p>Start reducing your CPA to <strong>${newcpa.toFixed (2)}€</strong>.</p>
      <br>  
 </div>
         `
