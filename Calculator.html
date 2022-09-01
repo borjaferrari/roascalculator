@@ -38,9 +38,11 @@ margin-bottom: 35px;
 margin-left:5%;
 margin-right:5%;
 }
-.rate-cat {margin-top: 35px !important;
-margin-bottom: 35px;
-margin-left:5%;
+.rate-cat {margin-left:7%;
+margin-right:7%;
+}
+
+hr {margin-left:5%;
 margin-right:5%;
 }
 .radios {line-height:20px !important;
@@ -124,11 +126,10 @@ margin-right:5%;
 // We show results in the new variable (div)
         result.innerHTML =`
         <br>
-<div class="nes-container is-dark with-title">
-  <p class="title"><span class="nes-text is-warning">Output:</span></p>
-<br>
+        <div class="nes-container is-dark with-title">
+        <p class="title"><span class="nes-text is-warning">Output:</span></p>
+        <br>
         <h4> <span class="nes-text is-error">To avoid losing money...</span></h4>
-        
         <hr style="border-top: 3px solid black;"><br>
         <p>Be aware you need a ROAS greater than <strong>${roas.toFixed(2)}.</strong></p>
         <p>Keep in mind your CPA cannot exceed <strong>${cpamax.toFixed(2)}€</strong>.</p>
@@ -139,22 +140,33 @@ margin-right:5%;
         <p>You want to achieve a <strong>${goal}</strong> goal.</p> 
         <p>So you are looking for a ROAS greater than  <strong>${newroas.toFixed(2)}</strong>.</p>  
         <p>Start reducing your CPA to <strong>${newcpa.toFixed (2)}€</strong>.</p>
-     <br>  
-</div>
+        <br>  
+        </div>
         `
     } 
     </script>
 
-            </div>
-            <div class="rate-cat">
-                      <h3 class="nes-balloon from-left nes-pointer">If you like, rate!<br>
+        </div>
+        <div style="margin-top: 35px !important;" class="rate-cat">
+        <h3 class="nes-balloon from-left nes-pointer">If you like, rate!<br>
         <i class="nes-icon is-small star"></i>
         <i class="nes-icon is-small star"></i>
         <i class="nes-icon is-small star"></i>
         <i class="nes-icon is-small star"></i>
         <i class="nes-icon is-small star"></i>
         </h3>
+        </div>
+        <div style="margin-top: 10px !important;margin-bottom: 0px !important;" class="rate-cat">
         <i class="nes-octocat animate "></i>
         </div>
+        <hr>
+        <div class="rate-cat" style="text-align:right;">
+            <span>
+                <p>
+                    @2022 Joan Jari.
+                </p>
+            </span>
+        </div>
+
 </body>
 </html>
